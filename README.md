@@ -6,3 +6,5 @@ Steps to produce results:
 2. Run forecast trainer script to train mlforecast models. Feel free to change the list of banks and from date as you did in data getter notebook. Also playaround the various parameters and hyper parameters available.
 3. Documentation for MLForecast framework is available here: https://nixtlaverse.nixtla.io/mlforecast/index.html
 4. Finally run the forecasting ui script using the command "stream run forecasting_ui.py". A localhost webserver will display results on your browser.
+
+As next steps, try replicating this process with different forecasting models like prophet, LSTM, pandarima forecasting models etc

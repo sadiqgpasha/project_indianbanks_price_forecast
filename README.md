@@ -10,3 +10,4 @@ Steps to produce results:
 As next steps, try replicating this process with different forecasting models like prophet, LSTM, pandarima forecasting models etc
 
 ![forecasting_1](https://github.com/sadiqgpasha/project_indianbanks_price_forecast/blob/main/screenshot1.png)
+![forecasting_2](https://github.com/sadiqgpasha/project_indianbanks_price_forecast/blob/main/screenshot2.png)

@@ -8,3 +8,5 @@ Steps to produce results:
 4. Finally run the forecasting ui script using the command "stream run forecasting_ui.py". A localhost webserver will display results on your browser.
 
 As next steps, try replicating this process with different forecasting models like prophet, LSTM, pandarima forecasting models etc
+
+![forecasting_1](https://github.com/sadiqgpasha/project_indianbanks_price_forecast/blob/main/screenshot1.png)

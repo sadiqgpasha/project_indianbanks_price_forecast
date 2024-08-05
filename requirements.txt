@@ -4,3 +4,4 @@ nse_lib
 scikit-learn
 xgboost
 mlforecast
+streamlit

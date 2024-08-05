@@ -1,6 +1,6 @@
 jugaad_data
 yfinance
-nse_lib
+nselib
 scikit-learn
 xgboost
 mlforecast

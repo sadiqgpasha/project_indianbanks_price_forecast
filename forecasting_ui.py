@@ -26,17 +26,17 @@ def read_df(file):
 # Create a select box
 option = st.selectbox(
     'Choose an option:',
-    ('AXISBANK','BANKBARODA','ICICIBANK', 'KOTAKBANK', 'SBIN', 'PNB', 'PSB', 'IDFCFIRSTB')
+    ('AXISBANK','BANKBARODA','ICICIBANK', 'KOTAKBANK', 'SBIN', 'PNB','HDFC', 'PSB', 'IDFCFIRSTB')
 )
 
-df = read_df(f'{option}_df.csv')
+data = read_df(f'{option}_df.csv')
 
 dynamic_features = ['OPEN', 'HIGH', 'LOW', 'LTP', 'VWAP', '52W H', '52W L', 'VOLUME', 'VALUE', 'NO OF TRADES']
 static_features = ['SYMBOL']
 
-df = df.rename(columns={'CLOSE': 'y', 'DATE': 'ds'})
+data = data.rename(columns={'CLOSE': 'y', 'DATE': 'ds'})
 #train = df.loc[df['ds'] < '2024-06-01']
-valid = df.loc[df['ds'] >= '2024-06-01']
+valid = data.loc[data['ds'] >= '2024-06-01']
 
 h = st.selectbox(
     'Choose the days to forecast:',
@@ -51,25 +51,6 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import make_pipeline
 from xgboost import XGBRegressor
 from mlforecast import MLForecast
-
-# from window_ops.rolling import rolling_mean, rolling_max, rolling_min
-
-# models = [make_pipeline( RandomForestRegressor(random_state=0, n_estimators=100, n_jobs=-1)),
-#           XGBRegressor(random_state=0, n_estimators=100, n_jobs=-1)]
-
-# model = MLForecast(models=models,
-#                    freq='D',
-#                    lags=[1,2,4],
-#                    lag_transforms={
-#                        1: [(rolling_mean, 4), (rolling_min, 4), (rolling_max, 4)], 
-#                    },
-#                    num_threads=10)
-
-# def model_training(data, time_col, target_col, static_features=static_features): #If you have no static features, pass an empty list or MLForecast will consider that all your additional columns are static.
-#     model.fit(train, id_col = 'SYMBOL', time_col='ds', target_col='y', max_horizon=60)
-#     return model, data
-
-# model, data = model_training(train, valid, h, static_features)
 
 
 st.title(f"{option}")
